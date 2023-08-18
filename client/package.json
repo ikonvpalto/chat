@@ -1,0 +1,19 @@
+{
+  "name": "chat-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "npx browser-sync start --port 8080 --server ./ -f ./ -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.29.3"
+  },
+  "dependencies": {
+    "@microsoft/signalr": "^8.0.0-preview.6.23329.11",
+    "rxjs": "^7.8.1"
+  }
+}

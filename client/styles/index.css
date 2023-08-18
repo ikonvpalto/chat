@@ -1,0 +1,32 @@
+:root {
+    --color-main: #08101B;
+    --color-bg: #F8FCF8;
+    --color-primary: #3390ec;
+    --color-accent: var(--color-bg);
+    --color-accent-bg: var(--color-primary);
+
+    --color-message-sent-bg: #BFE2BFFF;
+    --color-message-sent: var(--color-main);
+
+    --color-message-received-bg: var(--color-bg);
+    --color-message-received: var(--color-main);
+}
+
+body {
+    font-size: 16px;
+    margin: 0;
+    font-family: "Roboto",-apple-system,apple color emoji,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-size: 1.125rem;
+    color: var(--color-main);
+}
+
