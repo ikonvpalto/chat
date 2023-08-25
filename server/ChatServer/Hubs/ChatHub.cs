@@ -15,6 +15,6 @@ public sealed class ChatHub : Hub
             Date = DateTimeOffset.UtcNow,
         };
 
-        await Clients.All.SendAsync(MessageClientHandlerEndpoint, response);
+        await Clients.Others.SendAsync(MessageClientHandlerEndpoint, response);
     }
 }

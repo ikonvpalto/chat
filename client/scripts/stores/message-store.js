@@ -1,4 +1,5 @@
 import Store from "./store.js";
+import chatDataSource from '../data-sources/chat.js';
 
 const defaultMessages = [
     {
@@ -14,9 +15,13 @@ const defaultMessages = [
 class MessagesStore extends Store {
     constructor() {
         super(defaultMessages || []);
+        chatDataSource.addObserver((message) => {
+            this._setData([...this._data, { ...message, type: 'received' }]);
+        })
     }
 
-    addMessage(message) {
+    async addMessage(message) {
+        await chatDataSource.sendMessage(message);
         this._setData([...this._data, message]);
     }
 }

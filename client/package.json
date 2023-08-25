@@ -13,7 +13,6 @@
     "browser-sync": "^2.29.3"
   },
   "dependencies": {
-    "@microsoft/signalr": "^8.0.0-preview.6.23329.11",
-    "rxjs": "^7.8.1"
+    "@microsoft/signalr": "^8.0.0-preview.6.23329.11"
   }
 }

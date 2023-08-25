@@ -32,11 +32,11 @@ export default class ChatBox extends Component {
             .addEventListener('message-sent', this.onMessageSent.bind(this));
     }
 
-    onMessageSent(event) {
+    async onMessageSent(event) {
         event.preventDefault();
         event.stopPropagation();
 
-        MessageStore.addMessage({
+        await MessageStore.addMessage({
             type: 'sent',
             message: event.detail.message,
         });

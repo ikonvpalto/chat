@@ -2,6 +2,15 @@ using ChatServer.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(b => b
+        .SetIsOriginAllowed(_ => true)
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials());
+});
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -19,9 +28,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseCors();
 
 app.MapControllers();
 app.MapHub<ChatHub>("/chat");
