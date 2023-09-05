@@ -4,6 +4,6 @@ namespace ChatServer.Models;
 
 public sealed class MessageRequest
 {
-    [JsonPropertyName("message")]
-    public required string Message { get; init; }
+    [JsonPropertyName("text")]
+    public required string Text { get; init; }
 }

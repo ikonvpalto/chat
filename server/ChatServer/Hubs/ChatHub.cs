@@ -11,7 +11,7 @@ public sealed class ChatHub : Hub
     {
         var response = new MessageResponse
         {
-            Message = request.Message,
+            Text = request.Text,
             Date = DateTimeOffset.UtcNow,
         };
 

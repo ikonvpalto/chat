@@ -1,18 +1,19 @@
 {
-  "name": "chat-client",
-  "version": "1.0.0",
-  "description": "",
-  "main": "scripts/index.js",
+  "name": "client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "npx browser-sync start --port 8080 --server ./ -f ./ -w"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "browser-sync": "^2.29.3"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@microsoft/signalr": "^8.0.0-preview.6.23329.11"
+    "@microsoft/signalr": "^7.0.10",
+    "lit": "^2.7.6"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
   }
 }
