@@ -17,8 +17,8 @@ class MessagesStore extends Store<Message[]> {
         super(defaultMessages || []);
     }
 
-    addMessage(message: Message) {
-        this.data = [...this.data, message];
+    addMessage(...message: Message[]) {
+        this.data = [...this.data, ...message];
     }
 }
 

@@ -1,7 +1,7 @@
 import {Observable} from "../misc/observable.ts";
 import {HubConnection, HubConnectionBuilder, LogLevel} from '@microsoft/signalr';
 import {Message, MessageApiModel} from "../models/message";
-import {handleMessageReceived} from "../actions/message";
+import {handleMessagesReceived} from "../actions/message";
 
 class ChatDataSource extends Observable {
 
@@ -29,11 +29,17 @@ class ChatDataSource extends Observable {
         super();
         this._connection = ChatDataSource.connect();
         this._connection.on('Receive', this._handleMessageReceived.bind(this));
+        this._connection.on('ReceiveAll', this._handleMessagesReceived.bind(this));
     }
 
     _handleMessageReceived(message : MessageApiModel) {
         console.log(message);
-        handleMessageReceived(message.text);
+        handleMessagesReceived(message);
+    }
+
+    _handleMessagesReceived(messages : MessageApiModel[]) {
+        console.log(messages);
+        handleMessagesReceived(...messages);
     }
 
     async sendMessage(message : Message) {

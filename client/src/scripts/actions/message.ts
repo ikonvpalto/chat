@@ -11,9 +11,13 @@ export async function handleMessageSent(text: string) {
     await chatDataSource.sendMessage(message)
 }
 
-export function handleMessageReceived(text: string) {
-    messagesStore.addMessage({
-        owner: "external",
-        text,
-    });
+export function handleMessagesReceived<TMessage extends {text: string}>(...messages: TMessage[]) {
+    function map(message: TMessage): Message {
+        return {
+            owner: "external",
+            text: message.text,
+        }
+    }
+
+    messagesStore.addMessage(...messages.map(map));
 }
