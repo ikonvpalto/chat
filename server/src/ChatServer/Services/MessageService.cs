@@ -1,4 +1,4 @@
-﻿using ChatServer.Models.Entity;
+﻿using ChatServer.Database.Entities.Messages;
 using ChatServer.Models.Request;
 using ChatServer.Models.Response;
 using MongoDB.Driver;
@@ -20,9 +20,10 @@ public sealed class MessageService
 
     public async Task SaveAsync(MessageRequest messageRequest, CancellationToken cancellationToken = default)
     {
-        var entity = new Message()
+        var entity = new Message
         {
-            Text = messageRequest.Text
+            Text = messageRequest.Text,
+            Sender = null
         };
 
         await Collection.InsertOneAsync(entity, null, cancellationToken);

@@ -1,6 +1,6 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 
-namespace ChatServer.Models.Entity;
+namespace ChatServer.Database.Entities.Messages;
 
 public sealed class Message
 {
@@ -9,4 +9,7 @@ public sealed class Message
 
     [BsonElement("text")]
     public required string Text { get; init; }
+
+    [BsonElement("sender")]
+    public required MessageSender Sender { get; init; }
 }

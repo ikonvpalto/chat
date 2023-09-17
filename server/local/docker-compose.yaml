@@ -2,11 +2,19 @@
 
 services:
 
+    postgres:
+        image: postgres
+        ports:
+            - "5432:5432"
+        environment:
+            POSTGRES_DB: chat
+            POSTGRES_USER: kvp
+            POSTGRES_PASSWORD: john_cena
+
     mongo:
         image: mongo
-        restart: always
         ports:
-            - 27017:27017
+            - "27017:27017"
         environment:
             MONGO_INITDB_ROOT_USERNAME: kvp
             MONGO_INITDB_ROOT_PASSWORD: john_cena
@@ -21,7 +29,7 @@ services:
         depends_on:
             - mongo
         ports:
-            - 8081:8081
+            - "8081:8081"
         environment:
             ME_CONFIG_MONGODB_ADMINUSERNAME: kvp
             ME_CONFIG_MONGODB_ADMINPASSWORD: john_cena
