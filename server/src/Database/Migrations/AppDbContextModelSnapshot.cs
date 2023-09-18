@@ -22,7 +22,7 @@ namespace ChatServer.Database.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("ChatServer.Database.Entities.Identity.Role", b =>
+            modelBuilder.Entity("Api.Database.Entities.Identity.Role", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -49,7 +49,7 @@ namespace ChatServer.Database.Migrations
                     b.ToTable("Role", (string)null);
                 });
 
-            modelBuilder.Entity("ChatServer.Database.Entities.Identity.User", b =>
+            modelBuilder.Entity("Api.Database.Entities.Identity.User", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -219,7 +219,7 @@ namespace ChatServer.Database.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
-                    b.HasOne("ChatServer.Database.Entities.Identity.Role", null)
+                    b.HasOne("Api.Database.Entities.Identity.Role", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -228,7 +228,7 @@ namespace ChatServer.Database.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
                 {
-                    b.HasOne("ChatServer.Database.Entities.Identity.User", null)
+                    b.HasOne("Api.Database.Entities.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -237,7 +237,7 @@ namespace ChatServer.Database.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
-                    b.HasOne("ChatServer.Database.Entities.Identity.User", null)
+                    b.HasOne("Api.Database.Entities.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -246,13 +246,13 @@ namespace ChatServer.Database.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
                 {
-                    b.HasOne("ChatServer.Database.Entities.Identity.Role", null)
+                    b.HasOne("Api.Database.Entities.Identity.Role", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ChatServer.Database.Entities.Identity.User", null)
+                    b.HasOne("Api.Database.Entities.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -261,7 +261,7 @@ namespace ChatServer.Database.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
-                    b.HasOne("ChatServer.Database.Entities.Identity.User", null)
+                    b.HasOne("Api.Database.Entities.Identity.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

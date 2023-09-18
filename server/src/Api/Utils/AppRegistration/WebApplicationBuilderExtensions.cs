@@ -5,7 +5,7 @@ using ChatServer.Database.Entities.Identity;
 using Microsoft.AspNetCore.Identity;
 using Module = Autofac.Module;
 
-namespace ChatServer.Utils.AppRegistration;
+namespace ChatServer.Api.Utils.AppRegistration;
 
 public static class WebApplicationBuilderExtensions
 {

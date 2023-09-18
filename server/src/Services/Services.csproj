@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <RootNamespace>ChatServer.Services</RootNamespace>
+        <OutputType>Library</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Database\Database.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,8 +1,8 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace ChatServer.Models.Request;
+namespace ChatServer.Services.Models.Response;
 
-public sealed class MessageRequest
+public sealed class MessageResponse
 {
     [JsonPropertyName("text")]
     public required string Text { get; init; }

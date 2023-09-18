@@ -1,4 +1,4 @@
-﻿namespace ChatServer.Settings;
+﻿namespace ChatServer.Api.Settings;
 
 public sealed class JwtSettings
 {

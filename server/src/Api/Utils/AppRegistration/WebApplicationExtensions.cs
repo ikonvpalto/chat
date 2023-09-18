@@ -2,7 +2,7 @@ using System.Reflection;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.SignalR;
 
-namespace ChatServer.Utils.AppRegistration;
+namespace ChatServer.Api.Utils.AppRegistration;
 
 public static class WebApplicationExtensions
 {

@@ -9,8 +9,8 @@ public sealed class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbConte
 
     public AppDbContext CreateDbContext(string[] args)
     {
-        var appsettingsPath = Path.Join(Directory.GetCurrentDirectory(), "..", nameof(ChatServer), "appsettings.json");
-        var localAppsettingsPath = Path.Join(Directory.GetCurrentDirectory(), "..", nameof(ChatServer), "appsettings.local.json");
+        var appsettingsPath = Path.Join(Directory.GetCurrentDirectory(), "..", "Api", "appsettings.json");
+        var localAppsettingsPath = Path.Join(Directory.GetCurrentDirectory(), "..", "Api", "appsettings.local.json");
 
         var configuration = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <RootNamespace>ChatServer</RootNamespace>
+        <RootNamespace>ChatServer.Api</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -15,6 +15,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Database\Database.csproj" />
+      <ProjectReference Include="..\Services\Services.csproj" />
     </ItemGroup>
 
 </Project>
